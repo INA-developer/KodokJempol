@@ -114,6 +114,9 @@
     <section id="game1">
       <h2 data-lang-key="game1Title">Game 1: Kodok Lompatin Awan</h2>
       <p data-lang-key="game1Desc">Game ini mirip dengan Flappy Bird, klik untuk lompat!</p>
+
+      <canvas id="game1Canvas" width="400" height="300" style="border:1px solid #333;"></canvas>
+      <button id="jumpBtn">Lompat!</button>
     </section>
 
     <section id="game2">
@@ -217,6 +220,36 @@
     });
 
     setLanguage('id');  // default language Indonesia
+    <script>
+  const canvas = document.getElementById('game1Canvas');
+  const ctx = canvas.getContext('2d');
+
+  let frogY = 150;
+  let velocity = 0;
+  const gravity = 0.5;
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = 'green';
+    ctx.beginPath();
+    ctx.arc(50, frogY, 20, 0, Math.PI * 2);
+    ctx.fill();
+
+    velocity += gravity;
+    frogY += velocity;
+
+    if (frogY > 280) { // batas bawah
+      frogY = 280;
+      velocity = 0;
+    }
+    requestAnimationFrame(draw);
+  }
+
+  document.getElementById('jumpBtn').addEventListener('click', () => {
+    velocity = -10;
+  });
+
+  draw();
   </script>
 </body>
 </html>
