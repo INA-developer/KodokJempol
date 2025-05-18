@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kodok Jempol</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background-color: #2e8b57;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    nav {
+      margin-top: 0.5rem;
+    }
+    nav a {
+      color: #cceeea;
+      margin: 0 10px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+    main {
+      flex: 1;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.9);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    h2 {
+      color: #2e8b57;
+      margin-bottom: 0.5rem;
+    }
+    footer {
+      background-color: #2e8b57;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      user-select: none;
+    }
+    .lang-switch {
+      margin-top: 0.5rem;
+    }
+    .lang-button {
+      cursor: pointer;
+      background: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 6px 15px;
+      margin: 0 5px;
+      font-weight: 600;
+      color: #2e8b57;
+      box-shadow: 0 2px 5px rgba(46,139,87,0.4);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    .lang-button.active, .lang-button:hover {
+      background: #2e8b57;
+      color: white;
+      box-shadow: 0 4px 15px rgba(46,139,87,0.7);
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 8px 0;
+      }
+      main {
+        margin: 10px;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="site-title">Kodok Jempol</h1>
+    <nav>
+      <a href="#game1" data-lang-key="navGame1">Kodok Lompatin Awan</a>
+      <a href="#game2" data-lang-key="navGame2">Kodok Dandan Lucu</a>
+      <a href="#game3" data-lang-key="navGame3">Kodok Cari Teman</a>
+      <a href="#tentang" data-lang-key="navAbout">Tentang Kodok Jempol</a>
+      <a href="#stiker" data-lang-key="navStiker">Unduh Stiker WA</a>
+      <a href="#mewarnai" data-lang-key="navColoring">Mewarnai Kodok</a>
+    </nav>
+    <div class="lang-switch">
+      <button class="lang-button active" data-lang="id" aria-label="Bahasa Indonesia">ID</button>
+      <button class="lang-button" data-lang="en" aria-label="English">EN</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="game1">
+      <h2 data-lang-key="game1Title">Game 1: Kodok Lompatin Awan</h2>
+      <p data-lang-key="game1Desc">Game ini mirip dengan Flappy Bird, klik untuk lompat!</p>
+    </section>
+
+    <section id="game2">
+      <h2 data-lang-key="game2Title">Game 2: Kodok Dandan Lucu</h2>
+      <p data-lang-key="game2Desc">Dress-up game untuk anak cewek, buat kodokmu tampil lucu!</p>
+    </section>
+
+    <section id="game3">
+      <h2 data-lang-key="game3Title">Game 3: Kodok Cari Teman</h2>
+      <p data-lang-key="game3Desc">Game puzzle sederhana untuk mengasah otak!</p>
+    </section>
+
+    <section id="tentang">
+      <h2 data-lang-key="aboutTitle">Tentang Kodok Jempol</h2>
+      <p data-lang-key="aboutDesc">
+        Kisah lucu tentang Kodok Jempol yang selalu ingin bermain!
+      </p>
+    </section>
+
+    <section id="stiker">
+      <h2 data-lang-key="stickerTitle">Unduh Stiker WA Kodok Jempol</h2>
+      <p data-lang-key="stickerDesc">
+        Download stiker lucu Kodok Jempol untuk WhatsApp!
+      </p>
+    </section>
+
+    <section id="mewarnai">
+      <h2 data-lang-key="coloringTitle">Mewarnai Kodok</h2>
+      <p data-lang-key="coloringDesc">Gambar kodok yang bisa di-print untuk diwarnai!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Kodok Jempol. <span data-lang-key="footerRights">Semua hak dilindungi.</span></p>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        navGame1: "Frog Jump Cloud",
+        navGame2: "Cute Frog Dress-up",
+        navGame3: "Frog Find Friends",
+        navAbout: "About Kodok Jempol",
+        navStiker: "Download WA Stickers",
+        navColoring: "Coloring Frog",
+        game1Title: "Game 1: Frog Jump Cloud",
+        game1Desc: "This game is like Flappy Bird, click to jump!",
+        game2Title: "Game 2: Cute Frog Dress-up",
+        game2Desc: "A dress-up game for kids to make their frog look cute!",
+        game3Title: "Game 3: Frog Find Friends",
+        game3Desc: "A simple puzzle game to sharpen your brain!",
+        aboutTitle: "About Kodok Jempol",
+        aboutDesc: "A funny story about Kodok Jempol who always wants to play!",
+        stickerTitle: "Download Kodok Jempol WA Stickers",
+        stickerDesc: "Download cute Kodok Jempol stickers for WhatsApp!",
+        coloringTitle: "Coloring Frog",
+        coloringDesc: "Frog images that you can print and color!",
+        footerRights: "All rights reserved."
+      },
+      id: {
+        navGame1: "Kodok Lompatin Awan",
+        navGame2: "Kodok Dandan Lucu",
+        navGame3: "Kodok Cari Teman",
+        navAbout: "Tentang Kodok Jempol",
+        navStiker: "Unduh Stiker WA",
+        navColoring: "Mewarnai Kodok",
+        game1Title: "Game 1: Kodok Lompatin Awan",
+        game1Desc: "Game ini mirip dengan Flappy Bird, klik untuk lompat!",
+        game2Title: "Game 2: Kodok Dandan Lucu",
+        game2Desc: "Dress-up game untuk anak cewek, buat kodokmu tampil lucu!",
+        game3Title: "Game 3: Kodok Cari Teman",
+        game3Desc: "Game puzzle sederhana untuk mengasah otak!",
+        aboutTitle: "Tentang Kodok Jempol",
+        aboutDesc: "Kisah lucu tentang Kodok Jempol yang selalu ingin bermain!",
+        stickerTitle: "Unduh Stiker WA Kodok Jempol",
+        stickerDesc: "Download stiker lucu Kodok Jempol untuk WhatsApp!",
+        coloringTitle: "Mewarnai Kodok",
+        coloringDesc: "Gambar kodok yang bisa di-print untuk diwarnai!",
+        footerRights: "Semua hak dilindungi."
+      }
+    };
+
+    const langButtons = document.querySelectorAll('.lang-button');
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-lang-key]').forEach(el => {
+        const key = el.getAttribute('data-lang-key');
+        if (translations[lang] && translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+      langButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+      });
+    }
+
+    langButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        setLanguage(btn.getAttribute('data-lang'));
+      });
+    });
+
+    setLanguage('id');  // default language Indonesia
+  </script>
+</body>
+</html>
+
